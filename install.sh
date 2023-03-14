@@ -19,7 +19,7 @@ sudo modprobe acpi_call
 # required for gui
 sudo pacman -S gtk3 
 
-gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0
+gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0`
 
 #gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0`
 
