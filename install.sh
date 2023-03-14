@@ -14,4 +14,6 @@ sudo modprobe acpi_call
 
 
 # required for gui
-sudo pacman -S gtk3 gtk2
+sudo pacman -S gtk3 
+
+gcc `pkg-config --cflags gtk+-3.0` -o myapp main.c `pkg-config --libs gtk+-3.0
