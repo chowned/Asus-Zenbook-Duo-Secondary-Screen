@@ -16,4 +16,12 @@ sudo modprobe acpi_call
 # required for gui
 sudo pacman -S gtk3 
 
-gcc `pkg-config --cflags gtk+-3.0` -o myapp main.c `pkg-config --libs gtk+-3.0
+gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller main.c `pkg-config --libs gtk+-3.0
+mv ./asus_screen_brightness_controller /etc/asus_screen_brightness_controller
+
+
+crontab -l > ./crontab.txt
+echo "@reboot sudo modprobe acpi_call" >> crontab.txt
+echo "@reboot /etc/asus_screen_brightness_controller" >> crontab.txt
+crontab crontab.txt
+rm ./crontab.txt
