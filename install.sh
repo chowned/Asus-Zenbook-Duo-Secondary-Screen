@@ -23,7 +23,7 @@ gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_r
 
 #gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0`
 
-mv ./asus_screen_brightness_controller /etc/asus_screen_brightness_controller
+sudo mv ./asus_screen_brightness_controller /etc/asus_screen_brightness_controller
 
 
 sudo crontab -l > ./crontab.txt
