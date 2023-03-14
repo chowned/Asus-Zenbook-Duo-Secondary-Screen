@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S linux$(uname -r | sed 's/\([0-9]\)\.\([0-9]\).*/\1\2/')-headers dkms git
+sudo pacman -Sy linux$(uname -r | sed 's/\([0-9]\)\.\([0-9]\).*/\1\2/')-headers dkms git
 git clone https://github.com/nix-community/acpi_call
 cd acpi_call
 make
@@ -17,7 +17,7 @@ sudo modprobe acpi_call
 
 
 # required for gui
-sudo pacman -S gtk3 
+sudo pacman -Sy gtk3 
 
 gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0`
 
