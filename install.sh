@@ -9,7 +9,8 @@ sudo make install
 
 sudo cp ./acpi_call.ko /lib/modules/$(uname -r)/extra/
 sudo depmod -a
-rm -rf ../acpi_call
+cd ..
+rm -rf ./acpi_call
 
 sudo modprobe acpi_call
 
@@ -19,6 +20,9 @@ sudo modprobe acpi_call
 sudo pacman -S gtk3 
 
 gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0
+
+#gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller gui_to_run_script.c `pkg-config --libs gtk+-3.0`
+
 mv ./asus_screen_brightness_controller /etc/asus_screen_brightness_controller
 
 
