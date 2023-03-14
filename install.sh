@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo pacman -S linux$(uname -r | sed 's/\([0-9]\)\.\([0-9]\).*/\1\2/')-headers dkms git
 git clone https://github.com/nix-community/acpi_call
 cd acpi_call
@@ -20,8 +22,8 @@ gcc `pkg-config --cflags gtk+-3.0` -o asus_screen_brightness_controller main.c `
 mv ./asus_screen_brightness_controller /etc/asus_screen_brightness_controller
 
 
-crontab -l > ./crontab.txt
+sudo crontab -l > ./crontab.txt
 echo "@reboot sudo modprobe acpi_call" >> crontab.txt
 echo "@reboot /etc/asus_screen_brightness_controller" >> crontab.txt
-crontab crontab.txt
-rm ./crontab.txt
+sudo crontab crontab.txt
+sudo rm ./crontab.txt
