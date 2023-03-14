@@ -10,3 +10,8 @@ sudo depmod -a
 rm -rf ../acpi_call
 
 sudo modprobe acpi_call
+
+
+
+# required for gui
+sudo pacman -S gtk3 gtk2
