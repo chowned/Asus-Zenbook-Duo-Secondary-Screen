@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo apt install llinux-headers-$(uname -r) dkms git
+sudo apt install llinux-headers-$(uname -r) -y
+sudo apt install dkms git -y
 git clone https://github.com/nix-community/acpi_call
 cd acpi_call
 make
