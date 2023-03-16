@@ -3,6 +3,7 @@
 
 #include <gtk/gtk.h>
 #include <string.h>
+#include <gio/gio.h>
 
 int mapToDisplayVariable(int x) {
     return x * 0xF / 100;
