@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install linux$(uname -r | sed 's/\([0-9]\)\.\([0-9]\).*/\1\2/')-headers dkms git
+sudo apt install llinux-headers-$(uname -r) dkms git
 git clone https://github.com/nix-community/acpi_call
 cd acpi_call
 make
